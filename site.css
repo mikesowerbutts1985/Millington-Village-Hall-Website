@@ -484,3 +484,36 @@ footer {
         height: 38px;
     }
 }
+/* Mobile header: prevent horizontal scroll */
+@media (max-width: 820px) {
+    .navwrap {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    /* Let brand take full width on its own row */
+    .brand {
+        flex: 1 1 100%;
+    }
+
+    /* Don’t force a wide CTA on small screens */
+    .navcta {
+        min-width: auto;
+        margin-left: auto;
+    }
+
+    /* Nav goes full width and wraps instead of overflowing */
+    nav {
+        flex: 1 1 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        /* keep the “pill” look but allow wrapping */
+        border-radius: 18px;
+    }
+
+    nav a {
+        padding: 10px 12px; /* slightly tighter */
+    }
+}
+

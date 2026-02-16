@@ -534,17 +534,17 @@ footer {
     }
 }
 
-/* Prevent long strings (e.g. email) causing horizontal scroll */
-.panel a,
-.kv a {
-    overflow-wrap: anywhere;
-    word-break: break-word;
+/* Nicer wrapping for long links (emails / URLs) */
+.kv a,
+.panel a {
+    display: inline-block;      /* prevents weird layout jumps */
+    max-width: 100%;            /* never exceed container */
+    overflow-wrap: break-word;  /* only break when necessary */
+    word-break: normal;         /* don't chop aggressively */
+    hyphens: auto;
 }
 
-/* Allow children to shrink inside grid/flex */
-.panel,
-.heroCard,
-.card,
-.media {
-    min-width: 0;
+/* If you want emails to wrap onto their own line in the KV panel */
+.kv a.inline {
+    display: block;
 }

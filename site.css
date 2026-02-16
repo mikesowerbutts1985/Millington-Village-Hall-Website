@@ -1,0 +1,486 @@
+/* site.css — COUNTRY COTTAGE (ORIGINAL LAYOUT RESTORED) */
+
+:root {
+    --bg0: #fbf7f0;
+    --bg1: #f2eadf;
+    --paper: #fffdf8;
+
+    --text: #2f271f;
+    --muted: #6a5c4e;
+    --faint: #8b7c6b;
+
+    --sage: #7e9a76;
+    --terracotta: #c97b57;
+    --butter: #f2e2b8;
+
+    --stroke: rgba(70, 50, 30, 0.12);
+    --shadow: 0 16px 40px rgba(50, 35, 20, 0.08);
+
+    --radius: 18px;
+    --radius2: 26px;
+    --max: 1120px;
+}
+
+/* Base */
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font:
+        16px/1.6 ui-sans-serif,
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto;
+    color: var(--text);
+
+    background: radial-gradient(900px 700px at 10% -10%, rgba(126, 154, 118, 0.18), transparent 60%), radial-gradient(900px 700px at 90% 0%, rgba(201, 123, 87, 0.12), transparent 60%), linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+
+a {
+    color: var(--sage);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+}
+
+/* Header */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 253, 248, 0.85);
+    border-bottom: 1px solid var(--stroke);
+}
+
+.navwrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    gap: 14px;
+}
+
+/* Brand / Logo */
+/* Brand container */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+}
+
+/* Logo image */
+.logo {
+    height: 56px; /* adjust 48–60px if needed */
+    width: auto;
+    display: block;
+}
+
+/* Text beside logo */
+.brandText {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+/* Main title */
+.brandTitle {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2f271f;
+}
+
+/* Sub line */
+.brandTag {
+    font-size: 13px;
+    color: #6a5c4e;
+    margin-top: 4px;
+}
+
+.brandText h1 {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(40, 32, 24, 0.88);
+}
+
+.brandText span {
+    display: block;
+    font-size: 12px;
+    color: var(--faint);
+    letter-spacing: 0.02em;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.brand span {
+    display: block;
+    font-size: 12px;
+    color: var(--faint);
+}
+
+/* Nav pills */
+nav {
+    display: flex;
+    gap: 10px;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid var(--stroke);
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+}
+
+nav a {
+    padding: 10px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+nav a:hover {
+    background: rgba(126, 154, 118, 0.15);
+}
+
+nav a.active {
+    background: linear-gradient(90deg, rgba(126, 154, 118, 0.35), rgba(241, 227, 184, 0.45));
+    color: var(--text);
+}
+
+/* Hero Layout (RESTORED) */
+.hero {
+    padding: 36px 0 18px;
+}
+
+.heroGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+.heroCard {
+    position: relative;
+    border-radius: var(--radius2);
+    overflow: hidden;
+    border: 1px solid var(--stroke);
+    background: var(--paper);
+    box-shadow: var(--shadow);
+    min-height: 420px;
+}
+
+.heroImg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255, 253, 248, 0.92), rgba(255, 253, 248, 0.55) 55%, rgba(255, 253, 248, 0.2)), linear-gradient(180deg, rgba(255, 253, 248, 0.15), rgba(242, 234, 223, 0.85) 90%);
+}
+
+.heroContent {
+    position: relative;
+    padding: 30px;
+    max-width: 640px;
+}
+
+.heroContent h2 {
+    margin: 14px 0 10px;
+    font-size: 40px;
+    line-height: 1.05;
+}
+
+.heroContent p {
+    color: var(--muted);
+}
+
+/* Buttons */
+.actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--stroke);
+    background: rgba(255, 255, 255, 0.8);
+    font-weight: 800;
+}
+
+.btn.primary {
+    background: var(--sage);
+    color: white;
+    border-color: var(--sage);
+}
+
+/* Full width map section */
+.mapFull {
+    width: 100%;
+    margin: 40px 0;
+    border-top: 1px solid var(--stroke);
+    border-bottom: 1px solid var(--stroke);
+    background: var(--paper);
+}
+
+/* Make the map large again */
+.mapWrap {
+    width: 100%;
+    height: 520px; /* ← restore big map feel */
+}
+
+.mapWrap iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100; /* raise header above everything */
+}
+
+/* Media card layout */
+.media {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 14px;
+    align-items: center;
+}
+
+.navcta {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 210px;
+    position: relative;
+    z-index: 5; /* ensure it sits above other elements */
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--stroke);
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--muted); /* ← "Call" stays normal */
+    font-size: 13px;
+    font-weight: 900;
+    box-shadow: var(--shadow2);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Only the number is green */
+.pill strong {
+    color: var(--sage);
+    font-weight: 900;
+}
+
+/* Subtle hover */
+.pill:hover {
+    background: rgba(126, 154, 118, 0.12);
+    text-decoration: none;
+}
+
+/* Image */
+.thumb {
+    width: 100%;
+    border-radius: 14px;
+    aspect-ratio: 4 / 3; /* good default for portrait-ish and square-ish */
+    object-fit: cover;
+    border: 1px solid var(--stroke);
+    box-shadow: 0 12px 22px rgba(40, 32, 24, 0.1);
+}
+
+/* When the image is WIDE, stack text underneath */
+.media.wide {
+    grid-template-columns: 1fr;
+    align-items: start;
+}
+
+.media.wide .thumb {
+    aspect-ratio: 16 / 9; /* cinematic wide */
+}
+
+/* Small refinement for text spacing */
+.media .mediaText h4 {
+    margin: 0 0 8px;
+}
+
+.media .mediaText p {
+    margin: 0;
+}
+
+/* Side panel */
+.panel {
+    border-radius: var(--radius2);
+    border: 1px solid var(--stroke);
+    background: var(--paper);
+    box-shadow: var(--shadow);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 420px;
+}
+
+.panel h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.small {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.hr {
+    height: 1px;
+    background: var(--stroke);
+    margin: 6px 0;
+}
+
+/* Cards */
+main {
+    padding: 10px 0 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.card {
+    border-radius: var(--radius);
+    border: 1px solid var(--stroke);
+    background: var(--paper);
+    box-shadow: 0 16px 36px rgba(40, 32, 24, 0.08);
+    overflow: hidden;
+}
+
+.card .inner {
+    padding: 18px;
+}
+
+.card h4 {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.card p {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--stroke);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.foot {
+    padding: 18px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    color: var(--faint);
+    font-size: 13px;
+}
+
+/* Badge list (semantic version of badgeRow) */
+.badgeList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badgeList li {
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(70, 50, 30, 0.1);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.72));
+    color: rgba(47, 39, 31, 0.72);
+    font-size: 13px;
+    box-shadow: 0 10px 22px rgba(40, 32, 24, 0.06);
+}
+
+/* Telephone list inside kv grid */
+.phoneList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.phoneList li {
+    margin: 0;
+}
+
+.phoneList a {
+    color: var(--sage);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.phoneList a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    .heroGrid {
+        grid-template-columns: 1fr;
+    }
+    .panel {
+        min-height: auto;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 650px) {
+    .logo {
+        height: 38px;
+    }
+}

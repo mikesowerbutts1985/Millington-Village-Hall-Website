@@ -1,0 +1,109 @@
+<!-- location.html (LOCATION) -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Location • Millington Village Hall</title>
+        <meta name="description" content="Find Millington Village Hall on Church Lane, Millington, York." />
+        <link rel="stylesheet" href="site.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container navwrap">
+                <a class="brand" href="index.html" aria-label="Millington Village Hall home">
+                    <img class="logo" src="./logo.png" alt="Millington Village Hall logo" />
+                    <div class="brandText">
+                        <div class="brandTitle">Millington Village Hall</div>
+                        <div class="brandTag">Yorkshire Wolds • Church Lane</div>
+                    </div>
+                </a>
+
+                <nav aria-label="Primary">
+                    <a href="index.html">Home</a>
+                    <a href="around.html">Around Millington</a>
+                    <a href="accommodation.html">Accommodation</a>
+                    <a class="active" href="location.html">Location</a>
+                </nav>
+
+                <div class="navcta">
+                    <div class="pill">Call <strong>01759 304735</strong></div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container heroGrid">
+                <div class="heroCard">
+                    <img class="heroImg" src="Homeimg.jpg" alt="Millington Village Hall exterior" />
+                    <div class="heroOverlay" aria-hidden="true"></div>
+                    <div class="heroContent">
+                        <div class="kicker"><span class="dot" aria-hidden="true"></span>Location</div>
+                        <h2>Where to find Millington.</h2>
+                        <p>Millington Village Hall is located on Church Lane, Millington (East Riding of Yorkshire).</p>
+                        <div class="actions">
+                            <a class="btn primary" href="#map">Open map</a>
+                            <a class="btn" href="accommodation.html">Accommodation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="panel">
+                    <h3>Quick info</h3>
+                    <div class="small">Use the embedded map to get directions from your location.</div>
+                    <div class="hr"></div>
+                    <div class="kv">
+                        <div>Address</div>
+                        <div>Church Lane, Millington, East Riding of Yorkshire</div>
+                        <div>Nearby</div>
+                        <div>Pocklington (~3 miles)</div>
+                        <div>Phone</div>
+                        <div>01759 304735 • 01759 301931</div>
+                    </div>
+                    <div class="badgeRow">
+                        <div class="badge">Parking nearby</div>
+                        <div class="badge">Great walking base</div>
+                        <div class="badge">Rural & quiet</div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <main class="container">
+            <section id="map" class="mapSection">
+                <div class="mapWrap">
+                    <iframe src="https://www.google.com/maps?q=Church%20Ln%2C%20Millington%2C%20York%2C%20UK&output=embed" loading="lazy"> </iframe>
+                </div>
+            </section>
+            <section class="grid" style="margin-top: 18px">
+                <article class="card">
+                    <div class="inner">
+                        <h4>Arriving by car</h4>
+                        <p>Millington is a small village in the Yorkshire Wolds. Use the map above for the simplest turn-by-turn directions.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="inner">
+                        <h4>Make a day of it</h4>
+                        <p>
+                            Visiting walkers and groups often combine the hall with local routes. See
+                            <a class="inline" href="around.html">Around Millington</a> for highlights.
+                        </p>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container foot">
+                <div>© <span id="y"></span> Millington Village Hall</div>
+                <div><a href="index.html">Home</a> • <a href="around.html">Around Millington</a> • <a href="accommodation.html">Accommodation</a></div>
+            </div>
+        </footer>
+
+        <script>
+            document.getElementById("y").textContent = new Date().getFullYear();
+        </script>
+    </body>
+</html>

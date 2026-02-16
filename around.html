@@ -1,0 +1,155 @@
+<!-- around.html (AROUND MILLINGTON) -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Around Millington • Millington Village Hall</title>
+        <meta name="description" content="Walks, countryside, and places of interest around Millington." />
+        <link rel="stylesheet" href="site.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container navwrap">
+                <a class="brand" href="index.html" aria-label="Millington Village Hall home">
+                    <img class="logo" src="./logo.png" alt="Millington Village Hall logo" />
+                    <div class="brandText">
+                        <div class="brandTitle">Millington Village Hall</div>
+                        <div class="brandTag">Yorkshire Wolds • Church Lane</div>
+                    </div>
+                </a>
+
+                <nav aria-label="Primary">
+                    <a href="index.html">Home</a>
+                    <a class="active" href="around.html">Around Millington</a>
+                    <a href="accommodation.html">Accommodation</a>
+                    <a href="location.html">Location</a>
+                </nav>
+
+                <div class="navcta">
+                    <div class="pill">Call <strong>01759 304735</strong></div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container heroGrid">
+                <div class="heroCard">
+                    <img class="heroImg" src="VillageView.jpg" alt="Countryside view around Millington" />
+                    <div class="heroOverlay" aria-hidden="true"></div>
+                    <div class="heroContent">
+                        <div class="kicker"><span class="dot" aria-hidden="true"></span>Around Millington</div>
+                        <h2>Wolds walks, local history, and quiet lanes.</h2>
+                        <p>Apart from the countryside, the area offers plenty of interest — from prehistoric sites to nearby market towns and well-loved walking routes.</p>
+                        <div class="actions">
+                            <a class="btn primary" href="location.html">Plan your route</a>
+                            <a class="btn" href="accommodation.html">Stay overnight</a>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="panel">
+                    <h3>Highlights</h3>
+                    <div class="small">Key points from the original “Around Millington” page.</div>
+                    <div class="hr"></div>
+
+                    <div class="badgeRow">
+                        <div class="badge">Millington Pastures & Wood (SSSI)</div>
+                        <div class="badge">Iron Age & Roman sites</div>
+                        <div class="badge">Pocklington ~ 3 miles</div>
+                        <div class="badge">Burnby Hall Gardens</div>
+                    </div>
+
+                    <div class="hr"></div>
+
+                    <ul class="infoList">
+                        <li>
+                            <strong>Walks</strong>
+                            <ul>
+                                <li>Wolds Way</li>
+                                <li>Chalkland Way</li>
+                                <li>Minster Way</li>
+                                <li>Wilberforce Way</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Food</strong>
+                            <ul>
+                                <li>
+                                    <a class="inline" href="https://thegaitinn.co.uk/" target="_blank" rel="noopener"> The Gait Inn </a>
+                                </li>
+                                <li>
+                                    <a class="inline" href="https://www.ramblersrestmillington.co.uk/" target="_blank" rel="noopener"> Ramblers’ Rest Tea Room </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <main class="container">
+            <section class="grid">
+                <article class="card">
+                    <div class="inner media">
+                        <img class="thumb" src="EmmausWindow.jpg" alt="St Margaret’s Church Emmaus window" />
+                        <div>
+                            <h4>St Margaret’s Church</h4>
+                            <p>Millington village has St Margaret’s Church, including the Emmaus window installed in 2007.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="inner">
+                        <h4>Millington Pastures & Wood (SSSI)</h4>
+                        <p>A short walk takes you to Millington Pastures and Wood (SSSI). The area includes significant prehistoric, Iron Age and Roman sites.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="inner">
+                        <h4>Nearby towns & gardens</h4>
+                        <p>The nearest market town, Pocklington, is about 3 miles away and home to the National collection of water lilies at Burnby Hall Gardens.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="inner">
+                        <h4>Great base for walkers</h4>
+                        <p>Millington is about half a mile from the Wolds Way and Chalkland Way. The Minster Way runs through the village, and the Wilberforce Way is close by — making the hall well placed for walkers.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="inner">
+                        <h4>Food & refreshments</h4>
+                        <p>
+                            Good food and ale in the pub,
+                            <a class="inline" href="https://thegaitinn.co.uk/" target="_blank" rel="noopener"> The Gait Inn </a>. Lunches are also available at <a class="inline" href="https://www.ramblersrestmillington.co.uk/" target="_blank" rel="noopener"> The Ramblers’ Rest Tea Room </a>, only a short walk from the hall.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="inner">
+                        <h4>Next steps</h4>
+                        <p>Want to stay overnight? Check the <a class="inline" href="accommodation.html">accommodation</a> page or head to <a class="inline" href="location.html">location</a> for directions.</p>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container foot">
+                <div>© <span id="y"></span> Millington Village Hall</div>
+                <div><a href="index.html">Home</a> • <a href="accommodation.html">Accommodation</a> • <a href="location.html">Location</a></div>
+            </div>
+        </footer>
+
+        <script>
+            document.getElementById("y").textContent = new Date().getFullYear();
+        </script>
+    </body>
+</html>

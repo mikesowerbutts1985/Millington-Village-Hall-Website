@@ -1,0 +1,135 @@
+<!-- index.html (HOME) -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Millington Village Hall</title>
+        <meta name="description" content="Millington Village Hall in the Yorkshire Wolds — hire, accommodation, and local information." />
+        <link rel="stylesheet" href="site.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container navwrap">
+                <a class="brand" href="index.html" aria-label="Millington Village Hall home">
+                    <img class="logo" src="./logo.png" alt="Millington Village Hall logo" />
+                    <div class="brandText">
+                        <div class="brandTitle">Millington Village Hall</div>
+                        <div class="brandTag">Yorkshire Wolds • Church Lane</div>
+                    </div>
+                </a>
+
+                <nav aria-label="Primary">
+                    <a class="active" href="index.html">Home</a>
+                    <a href="around.html">Around Millington</a>
+                    <a href="accommodation.html">Accommodation</a>
+                    <a href="location.html">Location</a>
+                </nav>
+
+                <div class="navcta">
+                    <div class="pill" title="Telephone">Call <strong>01759 304735</strong></div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container heroGrid">
+                <div class="heroCard">
+                    <img class="heroImg" src="Homeimg.jpg" alt="Millington Village Hall exterior" />
+                    <div class="heroOverlay" aria-hidden="true"></div>
+
+                    <div class="heroContent">
+                        <div class="kicker"><span class="dot" aria-hidden="true"></span>Welcome</div>
+                        <h2>A beautiful village hall in the heart of the Yorkshire Wolds.</h2>
+                        <p>Millington Village Hall is a converted Methodist Chapel on Church Lane, recently renovated and refurbished. A warm, practical space for events, meetings and overnight “camping-barn” style stays.</p>
+                        <div class="actions">
+                            <a class="btn primary" href="accommodation.html">View accommodation</a>
+                            <a class="btn" href="location.html">Find us & directions</a>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="panel">
+                    <h3>At a glance</h3>
+                    <div class="small">A modern refresh of the original site, with the same core info.</div>
+                    <div class="hr"></div>
+
+                    <div class="kv">
+                        <div>Location</div>
+                        <div>Church Lane, Millington (East Riding of Yorkshire)</div>
+
+                        <div>Facilities</div>
+                        <div>Heated hall, carpeted, kitchen, toilets, electric shower</div>
+
+                        <div>Use</div>
+                        <div>Events, functions, meetings, field study centre (day use), overnight stays</div>
+
+                        <div>Telephone</div>
+                        <div>
+                            <ul class="phoneList">
+                                <li><a href="tel:01759304735">01759 304735</a></li>
+                                <li><a href="tel:01759301931">01759 301931</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="badgeRow" aria-label="Highlights">
+                        <div class="badge">Warm & welcoming</div>
+                        <div class="badge">Great for walkers</div>
+                        <div class="badge">Kitchen on-site</div>
+                        <div class="badge">Overnight available</div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <main class="container">
+            <section class="grid" aria-label="Key information">
+                <article class="card">
+                    <div class="inner">
+                        <h4>Hire the hall</h4>
+                        <p>Ideal for community events, clubs, private functions and meetings. For availability and requirements, please ring to discuss.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="inner">
+                        <h4>Stay overnight</h4>
+                        <p>The hall can provide up to 10 camp beds / sleeping mats in a single room. See <a class="inline" href="accommodation.html">accommodation details</a>.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="inner media">
+                        <img class="thumb" src="VillageView.jpg" alt="Village view near Millington" />
+                        <div>
+                            <h4>Yorkshire Wolds countryside</h4>
+                            <p>Peaceful scenery, excellent walks, and a fantastic base for exploring the local area.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="inner media">
+                        <img class="thumb" src="EmmausWindow.jpg" alt="St Margaret’s Church Emmaus window" />
+                        <div>
+                            <h4>Local heritage</h4>
+                            <p>Millington village includes St Margaret’s Church, with the Emmaus window installed in 2007.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container foot">
+                <div>© <span id="y"></span> Millington Village Hall</div>
+                <div><a href="location.html">Location</a> • <a href="accommodation.html">Accommodation</a> • <a href="around.html">Around Millington</a></div>
+            </div>
+        </footer>
+
+        <script>
+            document.getElementById("y").textContent = new Date().getFullYear();
+        </script>
+    </body>
+</html>

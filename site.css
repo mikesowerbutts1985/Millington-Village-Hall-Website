@@ -534,4 +534,17 @@ footer {
     }
 }
 
+/* Prevent long strings (e.g. email) causing horizontal scroll */
+.panel a,
+.kv a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
 
+/* Allow children to shrink inside grid/flex */
+.panel,
+.heroCard,
+.card,
+.media {
+    min-width: 0;
+}

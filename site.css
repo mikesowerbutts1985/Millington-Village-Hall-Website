@@ -534,17 +534,32 @@ footer {
     }
 }
 
-/* Nicer wrapping for long links (emails / URLs) */
-.kv a,
-.panel a {
-    display: inline-block;      /* prevents weird layout jumps */
-    max-width: 100%;            /* never exceed container */
-    overflow-wrap: break-word;  /* only break when necessary */
-    word-break: normal;         /* don't chop aggressively */
+/* Prevent overflow, but only force aggressive wrapping on emails/URLs */
+.panel,
+.heroCard,
+.card,
+.media {
+    min-width: 0;
+}
+
+/* Normal links: wrap only if needed (looks nicer) */
+.panel a,
+.kv a {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: normal;
     hyphens: auto;
 }
 
-/* If you want emails to wrap onto their own line in the KV panel */
+/* Emails + URLs: allow breaking anywhere to prevent horizontal scroll */
+.panel a[href^="mailto:"],
+.kv a[href^="mailto:"],
+.panel a[href^="http"],
+.kv a[href^="http"] {
+    overflow-wrap: anywhere;
+}
+
+/* In the key/value panel, make long links wrap as a neat block line */
 .kv a.inline {
     display: block;
 }

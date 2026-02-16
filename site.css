@@ -563,3 +563,12 @@ footer {
 .kv a.inline {
     display: block;
 }
+.card a.inline {
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.card a.inline[href^="mailto:"],
+.card a.inline[href^="http"] {
+    overflow-wrap: anywhere;
+}

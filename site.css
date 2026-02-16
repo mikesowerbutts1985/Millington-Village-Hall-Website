@@ -517,3 +517,21 @@ footer {
     }
 }
 
+/* Prevent content overflow on small screens */
+@media (max-width: 560px) {
+    .media {
+        grid-template-columns: 1fr;
+    }
+
+    .thumb {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Optional: reduce big hero headline slightly on tiny screens */
+    .heroContent h2 {
+        font-size: 32px;
+    }
+}
+
+

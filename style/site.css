@@ -327,6 +327,14 @@ nav a.active {
     border: 1px solid var(--stroke);
     box-shadow: 0 12px 22px rgba(40, 32, 24, 0.1);
 }
+.thumb-full {
+    width: 100%;
+    border-radius: 14px;
+    
+    object-fit: cover;
+    border: 1px solid var(--stroke);
+    box-shadow: 0 12px 22px rgba(40, 32, 24, 0.1);
+}
 
 /* When the image is WIDE, stack text underneath */
 .media.wide {

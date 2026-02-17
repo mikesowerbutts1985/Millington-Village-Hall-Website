@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Events | Millington Village Hall</title>
+    <meta name="description" content="Events at Millington Village Hall in the Yorkshire Wolds." />
+    <link rel="stylesheet" href="style/site.css?v=1771334159" />
+    <link rel="stylesheet" href="style/events.css?v=1.0.3" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="container navwrap">
+        <a class="brand" href="index.html" aria-label="Millington Village Hall home">
+          <img class="logo" src="./logo.png" alt="Millington Village Hall logo" />
+          <div class="brandText">
+            <div class="brandTitle">Millington Village Hall</div>
+            <div class="brandTag">Yorkshire Wolds • Church Lane</div>
+          </div>
+        </a>
+
+        <nav aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="around.html">Around Millington</a>
+          <a href="accommodation.html">Accommodation</a>
+          <a href="location.html">Location</a>
+          <a class="active" href="events.html" aria-current="page">Events</a>
+        </nav>
+
+        <div class="navcta">
+          <div class="pill" title="Telephone">Call <strong>01759 301931</strong></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero hero--simple">
+      <div class="container heroGrid">
+        <div class="heroCard">
+          <img class="heroImg" src="Homeimg.jpg" alt="Millington Village Hall exterior" />
+          <div class="heroOverlay" aria-hidden="true"></div>
+
+          <div class="heroContent">
+            <div class="kicker"><span class="dot" aria-hidden="true"></span>What’s on</div>
+            <h2>Events at the Hall</h2>
+            <p>See what’s happening at Millington Village Hall.</p>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <h3>Quick info</h3>
+          <div class="small">Search and filter upcoming events below. Posters and links appear on each event where available.</div>
+          <div class="hr"></div>
+
+          <div class="kv">
+            <div>Location</div>
+            <div>Church Lane, Millington (East Riding of Yorkshire)</div>
+
+            <div>Telephone</div>
+            <div>
+              <ul class="phoneList">
+                <li><a href="tel:01759304735">01759 301931</a></li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <main class="container">
+      <section class="events-filters" aria-label="Filter events">
+        <div class="events-filtersRow">
+          <label class="events-filter">
+            <span class="events-filterLabel">Search</span>
+            <input id="events-search" type="search" placeholder="Search events…" autocomplete="off" />
+          </label>
+
+          <label class="events-filter">
+            <span class="events-filterLabel">Month</span>
+            <select id="events-month">
+              <option value="all">All months</option>
+            </select>
+          </label>
+
+          <label class="events-filter events-filterToggle">
+            <input id="events-upcoming" type="checkbox" checked />
+            <span>Upcoming only</span>
+          </label>
+        </div>
+      </section>
+
+      <section aria-label="Upcoming events">
+        <div id="events-list" class="events-list">
+          <!-- injected by JS -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container foot">
+        <div>© <span id="y"></span> Millington Village Hall</div>
+        <div><a href="location.html">Location</a> • <a href="accommodation.html">Accommodation</a> • <a href="around.html">Around Millington</a></div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+
+    <script type="module" src="events/events.js?v=1.0.3"></script>
+  </body>
+</html>

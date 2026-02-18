@@ -113,6 +113,7 @@ main.container {
   color: var(--muted);
 }
 
+
 /* Mobile: stack image above text */
 @media (max-width: 560px) {
   .event-card {

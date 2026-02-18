@@ -639,6 +639,15 @@ footer {
   flex-shrink: 0;
 }
 
+/* Events header: stack nav + phone on the right */
+.topbarRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+
 @media (max-width: 900px) {
   .navcta {
     order: 3;

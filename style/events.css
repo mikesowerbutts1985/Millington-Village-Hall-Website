@@ -1,0 +1,131 @@
+/* === Events Page === */
+
+.events {
+  margin-top: 18px;
+}
+
+.events-heading {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.events-list {
+  display: grid;
+  gap: 14px;
+}
+
+/* Ensure full-page gradient shows through */
+html,
+body {
+  background: var(--bg0);
+}
+main.container {
+  background: transparent;
+}
+
+/* Card styling to match site look */
+.event-card {
+  background: var(--paper);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+}
+
+/* Optional media column */
+.event-media {
+  flex: 0 0 180px;
+}
+.event-media img {
+  width: 180px;
+  height: 100%;
+  min-height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Body */
+.event-body {
+  padding: 16px;
+  min-width: 0;
+}
+
+.event-title {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.event-meta {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.event-badge {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--muted);
+  vertical-align: 1px;
+}
+
+.event-summary {
+  margin: 10px 0 0;
+  color: var(--text);
+}
+
+.event-links {
+  margin-top: 10px;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.event-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.event-link:hover {
+  text-decoration: underline;
+}
+
+.events-empty {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Mobile: stack image above text */
+@media (max-width: 560px) {
+  .event-card {
+    flex-direction: column;
+  }
+
+  .event-media {
+    flex: none;
+  }
+
+  .event-media img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+}

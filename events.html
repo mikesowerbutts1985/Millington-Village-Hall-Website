@@ -1,112 +1,110 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Events | Millington Village Hall</title>
-    <meta name="description" content="Events at Millington Village Hall in the Yorkshire Wolds." />
-    <link rel="stylesheet" href="style/site.css?v=1771336666" />
-    <link rel="stylesheet" href="style/events.css?v=1.0.3" />
-  </head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Events • Millington Village Hall</title>
+        <meta name="description" content="Upcoming and regular events at Millington Village Hall." />
 
-  <body>
-    <header class="topbar">
-      <div class="container navwrap">
-        <a class="brand" href="index.html" aria-label="Millington Village Hall home">
-          <img class="logo" src="./logo.png" alt="Millington Village Hall logo" />
-          <div class="brandText">
-            <div class="brandTitle">Millington Village Hall</div>
-            <div class="brandTag">Yorkshire Wolds • Church Lane</div>
-          </div>
-        </a>
+        <link rel="stylesheet" href="style/site.css?v=1771443116" />
+        <link rel="stylesheet" href="style/events.css?v=1" />
+    </head>
 
-        <nav aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="around.html">Around Millington</a>
-          <a href="accommodation.html">Accommodation</a>
-          <a href="location.html">Location</a>
-          <a class="active" href="events.html" aria-current="page">Events</a>
-        </nav>
+    <body>
+        <header class="topbar">
+            <div class="container navwrap">
+                <a class="brand" href="index.html" aria-label="Millington Village Hall home">
+                    <img class="logo" src="./logo.png" alt="Millington Village Hall logo" />
+                    <div class="brandText">
+                        <div class="brandTitle">Millington Village Hall</div>
+                        <div class="brandTag">Yorkshire Wolds • Church Lane</div>
+                    </div>
+                </a>
 
-        <div class="navcta">
-          <div class="pill" title="Telephone">Call <strong>01759 301931</strong></div>
-        </div>
-      </div>
-    </header>
+                <!-- Right side: nav + phone aligned together -->
+                <div class="topbarRight">
+                    <nav aria-label="Primary">
+                        <a href="index.html">Home</a>
+                        <a href="around.html">Around Millington</a>
+                        <a href="accommodation.html">Accommodation</a>
+                        <a href="location.html">Location</a>
+                        <a class="active" href="events.html">Events</a>
+                    </nav>
 
-    <section class="hero hero--simple">
-      <div class="container heroGrid">
-        <div class="heroCard">
-          <img class="heroImg" src="Homeimg.jpg" alt="Millington Village Hall exterior" />
-          <div class="heroOverlay" aria-hidden="true"></div>
-
-          <div class="heroContent">
-            <div class="kicker"><span class="dot" aria-hidden="true"></span>What’s on</div>
-            <h2>Events at the Hall</h2>
-            <p>See what’s happening at Millington Village Hall.</p>
-          </div>
-        </div>
-
-        <aside class="panel">
-          <h3>Quick info</h3>
-          <div class="small">Search and filter upcoming events below. Posters and links appear on each event where available.</div>
-          <div class="hr"></div>
-
-          <div class="kv">
-            <div>Location</div>
-            <div>Church Lane, Millington (East Riding of Yorkshire)</div>
-
-            <div>Telephone</div>
-            <div>
-              <ul class="phoneList">
-                <li><a href="tel:01759 301931">01759 301931</a></li>
-              </ul>
+                    <div class="navcta">
+                        <a class="pill" href="tel:01759301931" title="Telephone">
+                            Call <strong>01759 301931</strong>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </aside>
-      </div>
-    </section>
+        </header>
 
-    <main class="container">
-      <section class="events-filters" aria-label="Filter events">
-        <div class="events-filtersRow">
-          <label class="events-filter">
-            <span class="events-filterLabel">Search</span>
-            <input id="events-search" type="search" placeholder="Search events…" autocomplete="off" />
-          </label>
+        <section class="hero">
+            <div class="container heroGrid">
+                <div class="heroCard" style="padding: 2.5rem;">
+                    <div class="heroContent" style="position: static; color: inherit;">
+                        <div class="kicker"><span class="dot" aria-hidden="true"></span>Events</div>
+                        <h2>What’s on at the hall.</h2>
+                        <p>
+                            One-off events and regular groups — sorted by what’s coming up next.
+                            Recurring events show their next occurrence.
+                        </p>
+                        <div class="actions">
+                            <a class="btn primary" href="tel:01759301931">Ring to book</a>
+                            <a class="btn" href="index.html">Back to home</a>
+                        </div>
+                    </div>
+                </div>
 
-          <label class="events-filter">
-            <span class="events-filterLabel">Month</span>
-            <select id="events-month">
-              <option value="all">All months</option>
-            </select>
-          </label>
+                <aside class="panel">
+                    <h3>Bookings & enquiries</h3>
+                    <div class="small">For information and bookings, ring:</div>
+                    <div class="hr"></div>
+                    <a class="pill" href="tel:01759301931">
+                        Call <strong>01759 301931</strong>
+                    </a>
 
-          <label class="events-filter events-filterToggle">
-            <input id="events-upcoming" type="checkbox" checked />
-            <span>Upcoming only</span>
-          </label>
-        </div>
-      </section>
+                    <div class="hr"></div>
 
-      <section aria-label="Upcoming events">
-        <div id="events-list" class="events-list">
-          <!-- injected by JS -->
-        </div>
-      </section>
-    </main>
+                    <h3>Good to know</h3>
+                    <ul class="badgeList">
+                        <li>Friendly local groups</li>
+                        <li>All welcome</li>
+                        <li>Ticketed events as listed</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
 
-    <footer>
-      <div class="container foot">
-        <div><a href="tel:01759 301931">01759 301931</a> • <a href="mailto:accommodation@millingtonvillagehall.org.uk">accommodation@millingtonvillagehall.org.uk</a></div>
-        <div><a href="location.html">Location</a> • <a href="accommodation.html">Accommodation</a> • <a href="around.html">Around Millington</a></div>
-      </div>
-    </footer>
+        <main class="container">
+            <section class="events" aria-label="Events list">
+                <h3 class="events-heading">Events</h3>
+                <div id="events-list" class="events-list" aria-live="polite"></div>
+            </section>
+        </main>
 
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
+        <footer>
+            <div class="container foot">
+                <div>
+                    <a href="tel:01759301931">01759 301931</a>
+                    •
+                    <a href="mailto:accommodation@millingtonvillagehall.org.uk">accommodation@millingtonvillagehall.org.uk</a>
+                </div>
+                <div>
+                    <a href="index.html">Home</a>
+                    •
+                    <a href="around.html">Around Millington</a>
+                    •
+                    <a href="accommodation.html">Accommodation</a>
+                    •
+                    <a href="location.html">Location</a>
+                    •
+                    <a href="events.html">Events</a>
+                </div>
+            </div>
+        </footer>
 
-    <script type="module" src="events/events.js?v=1.0.3"></script>
-  </body>
+        <script type="module" src="events/events.js?v=1"></script>
+    </body>
 </html>

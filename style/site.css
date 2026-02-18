@@ -188,7 +188,7 @@ nav a.active {
     border: 1px solid var(--stroke);
     background: var(--paper);
     box-shadow: var(--shadow);
-    min-height: 420px;
+    min-height: auto;
 }
 
 .heroImg {
@@ -365,7 +365,7 @@ nav a.active {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    min-height: 420px;
+    min-height: auto;
 }
 
 .panel h3 {
@@ -654,3 +654,22 @@ footer {
   }
 }
 
+/* Mobile: hero buttons full width */
+@media (max-width: 560px) {
+  .hero .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero .actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Mobile: don't force tall hero cards */
+@media (max-width: 980px) {
+  .heroCard,
+  .panel {
+    min-height: 0;
+  }
+}

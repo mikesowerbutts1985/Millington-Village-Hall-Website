@@ -6,7 +6,7 @@
         <title>Events • Millington Village Hall</title>
         <meta name="description" content="Upcoming and regular events at Millington Village Hall." />
 
-        <link rel="stylesheet" href="style/site.css?v=1771444238" />
+        <link rel="stylesheet" href="style/site.css?v=1771533204" />
         <link rel="stylesheet" href="style/events.css?v=1" />
     </head>
 
@@ -14,10 +14,10 @@
         <header class="topbar">
             <div class="container navwrap">
                 <a class="brand" href="index.html" aria-label="Millington Village Hall home">
-                    <img class="logo" src="./logo.png" alt="Millington Village Hall logo" />
+                    <img class="logo" src="./logo.svg" alt="Millington Village Hall logo" />
                     <div class="brandText">
-                        <div class="brandTitle">Millington Village Hall</div>
-                        <div class="brandTag">Yorkshire Wolds • Church Lane</div>
+                        <!-- <div class="brandTitle">Millington Village Hall</div> -->
+                        <!-- <div class="brandTag">Yorkshire Wolds • Church Lane</div> -->
                     </div>
                 </a>
 
@@ -42,7 +42,6 @@
             <div class="container heroGrid">
                 <div class="heroCard">
                     <div class="heroContent">
-                        <div class="kicker"><span class="dot" aria-hidden="true"></span>Events</div>
                         <h2>What’s on at the hall.</h2>
                         <p>One-off events and regular groups.</p>
                         <div class="actions">
@@ -56,7 +55,7 @@
                     <h3>Bookings & enquiries</h3>
                     <div class="small">For information and bookings, ring:</div>
                     <div class="hr"></div>
-                    <a class="pill" href="tel:01759301931"> Call <strong>01759 301931</strong> </a>
+                    <a class="" href="tel:01759301931"> Call <strong>01759 301931</strong> </a>
 
                     <div class="hr"></div>
 
@@ -73,7 +72,12 @@
         <main class="container">
             <section class="events" aria-label="Events list">
                 <h3 class="events-heading">Events</h3>
-                <div id="events-list" class="events-list" aria-live="polite"></div>
+
+                <h4 class="events-subheading" id="special-events">Special Events</h4>
+                <div id="events-special" class="events-list" aria-live="polite" aria-labelledby="special-events"></div>
+
+                <h4 class="events-subheading" id="regular-events">Regular Events</h4>
+                <div id="events-regular" class="events-list" aria-live="polite" aria-labelledby="regular-events"></div>
             </section>
         </main>
 

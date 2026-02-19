@@ -85,9 +85,10 @@ a:hover {
 
 /* Logo image */
 .logo {
-    height: 56px; /* adjust 48–60px if needed */
+    height: 105px;
     width: auto;
     display: block;
+    margin-left:0.25rem;
 }
 
 /* Text beside logo */

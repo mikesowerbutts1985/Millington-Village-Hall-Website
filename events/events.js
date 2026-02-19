@@ -1,4 +1,4 @@
-// events.js (ES module) — single combined list, recurring shows next occurrence
+// events.js (ES module) — split into Special Events (one-off) + Regular Events (recurring)
 const DATA_URL = "events/events.json"; // (you told me future reference is events/events.json — noted for next time)
 
 function escapeHtml(str) {
@@ -129,17 +129,11 @@ function nextOccurrenceForEvent(ev, now) {
   if (!anchorStart) return null;
 
   if (cadence.type === "weekly") {
-    return nextWeeklyOccurrence(
-      { anchorStart, interval: cadence.interval, weekday: cadence.weekday },
-      now
-    );
+    return nextWeeklyOccurrence({ anchorStart, interval: cadence.interval, weekday: cadence.weekday }, now);
   }
 
   if (cadence.type === "monthly") {
-    return nextMonthlyOccurrence(
-      { anchorStart, weekday: cadence.weekday, weekOfMonth: cadence.weekOfMonth },
-      now
-    );
+    return nextMonthlyOccurrence({ anchorStart, weekday: cadence.weekday, weekOfMonth: cadence.weekOfMonth }, now);
   }
 
   return null;
@@ -213,12 +207,19 @@ function renderCard(item) {
   const metaLines = [];
 
   if (item.kind === "recurring" && item.when) {
-    metaLines.push(`<div class="event-meta"><span class="event-badge">Regular</span> Next Event: ${escapeHtml(formatNextOccurrence(item.when))}</div>`);
+    metaLines.push(
+      `<div class="event-meta"><span class="event-badge">Regular</span> Next Event: ${escapeHtml(
+        formatNextOccurrence(item.when)
+      )}</div>`
+    );
     if (ev.schedule) metaLines.push(`<div class="event-meta">${escapeHtml(ev.schedule)}</div>`);
   } else {
     const start = parseDate(ev.dateStart);
     const end = parseDate(ev.dateEnd);
-    if (start) metaLines.push(`<div class="event-meta">${escapeHtml(formatDateRange(start, end))}</div>`);
+    if (start)
+      metaLines.push(
+        `<div class="event-meta"><span class="event-badge">Special</span> ${escapeHtml(formatDateRange(start, end))}</div>`
+      );
   }
 
   if (location) metaLines.push(`<div class="event-meta">${location}</div>`);
@@ -264,14 +265,22 @@ function isUpcomingOneOff(ev, now) {
 }
 
 async function main() {
-  const listEl = document.getElementById("events-list");
-  if (!listEl) return;
+  // New containers
+  const specialEl = document.getElementById("events-special");
+  const regularEl = document.getElementById("events-regular");
+
+  // Back-compat fallback (if someone loads older HTML)
+  const legacyListEl = document.getElementById("events-list");
+
+  // If we have the new containers, use them. Otherwise keep legacy behaviour.
+  const useSplit = !!(specialEl && regularEl);
 
   try {
     const events = await loadEvents();
     const now = new Date();
 
-    const items = [];
+    const special = [];
+    const regular = [];
 
     for (const ev of events) {
       if (!ev || typeof ev !== "object") continue;
@@ -279,28 +288,48 @@ async function main() {
       if (isRecurring(ev)) {
         const next = nextOccurrenceForEvent(ev, now);
         // Only include recurring events that have a computable next date.
-        // (Keeps the list properly sortable and avoids confusion.)
-        if (next) items.push({ kind: "recurring", when: next, ev });
+        if (next) regular.push({ kind: "recurring", when: next, ev });
         continue;
       }
 
       if (isUpcomingOneOff(ev, now)) {
         const start = parseDate(ev.dateStart);
-        if (start) items.push({ kind: "oneoff", when: start, ev });
+        if (start) special.push({ kind: "oneoff", when: start, ev });
       }
     }
 
-    items.sort((a, b) => a.when.getTime() - b.when.getTime());
+    special.sort((a, b) => a.when.getTime() - b.when.getTime());
+    regular.sort((a, b) => a.when.getTime() - b.when.getTime());
 
-    if (items.length === 0) {
-      setEmpty(listEl, "No events currently listed.");
+    if (!useSplit) {
+      // Legacy single list
+      if (!legacyListEl) return;
+
+      const combined = [...special, ...regular];
+      if (combined.length === 0) {
+        setEmpty(legacyListEl, "No events currently listed.");
+        return;
+      }
+      legacyListEl.innerHTML = combined.map(renderCard).join("");
       return;
     }
 
-    listEl.innerHTML = items.map(renderCard).join("");
+    // Split lists (new requirement)
+    if (special.length === 0) setEmpty(specialEl, "No special events currently listed.");
+    else specialEl.innerHTML = special.map(renderCard).join("");
+
+    if (regular.length === 0) setEmpty(regularEl, "No regular events currently listed.");
+    else regularEl.innerHTML = regular.map(renderCard).join("");
   } catch (err) {
     console.error(err);
-    setEmpty(listEl, "Sorry — the events list couldn’t be loaded.");
+
+    if (useSplit) {
+      setEmpty(specialEl, "Sorry — the events list couldn’t be loaded.");
+      setEmpty(regularEl, "");
+      return;
+    }
+
+    if (legacyListEl) setEmpty(legacyListEl, "Sorry — the events list couldn’t be loaded.");
   }
 }
 

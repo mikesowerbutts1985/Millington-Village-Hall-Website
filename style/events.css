@@ -6,8 +6,14 @@
 
 .events-heading {
   margin: 0 0 12px;
-  font-size: 16px;
+  font-size: 18px;
 }
+.events-subheading {
+  margin: 18px 0 10px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
 
 .events-list {
   display: grid;
@@ -61,7 +67,7 @@ main.container {
 
 .event-meta {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 16px;
   margin-top: 3px;
 }
 

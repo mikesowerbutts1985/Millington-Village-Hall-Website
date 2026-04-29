@@ -428,6 +428,134 @@ main {
     color: var(--muted);
 }
 
+/* Booking sections (availability calendar + enquiry form) */
+.bookingSection {
+    padding: 36px 0;
+    border-top: 1px solid var(--stroke);
+}
+
+.sectionTitle {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.sectionIntro {
+    color: var(--muted);
+    margin: 0 0 20px;
+    max-width: 640px;
+}
+
+.calendarWrap {
+    width: 100%;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--stroke);
+    box-shadow: var(--shadow);
+    aspect-ratio: 4 / 3;
+    max-height: 600px;
+}
+
+.calendarWrap iframe {
+    width: 100%;
+    height: calc(100% + 55px);
+    display: block;
+    border: 0;
+}
+
+.enquiryCard {
+    background: var(--paper);
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px;
+}
+
+.enquiryForm {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formField label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.formField input,
+.formField select,
+.formField textarea {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--stroke);
+    background: rgba(255, 255, 255, 0.85);
+    font: inherit;
+    font-size: 15px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.formField input:focus,
+.formField select:focus,
+.formField textarea:focus {
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px rgba(126, 154, 118, 0.15);
+}
+
+.formField textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.required {
+    color: var(--terracotta);
+}
+
+.formSubmit {
+    align-self: flex-start;
+    font-size: 15px;
+    padding: 12px 28px;
+    cursor: pointer;
+    border: none;
+}
+
+.formSuccess {
+    background: rgba(126, 154, 118, 0.15);
+    border: 1px solid var(--sage);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    color: var(--text);
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+@media (max-width: 600px) {
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+
+    .calendarWrap {
+        aspect-ratio: 3 / 4;
+    }
+
+    .enquiryCard {
+        padding: 18px;
+    }
+}
+
 /* Footer */
 footer {
     border-top: 1px solid var(--stroke);
